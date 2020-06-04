@@ -6,13 +6,13 @@
 |password|string|null: false|
 |name|string|null: false|
 ### Association
-- has_many :massages
+- has_many :messages
 - has_many :groups_users
 
-## massagesテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|message|text|null: false|
 |image|string|null: false|
 |user_id|integer| null: false, foreign_key: true|
 ### Association
