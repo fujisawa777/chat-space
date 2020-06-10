@@ -239,12 +239,9 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
-<<<<<<< HEAD
   font-awesome-sass
   haml-rails (>= 1.0, <= 2.0.1)
-=======
   devise
->>>>>>> b794352... create-server-side
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
   mysql2 (>= 0.4.4)
