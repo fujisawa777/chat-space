@@ -2,35 +2,22 @@
   .main-header
     .main-header__left-box
       %h2.main-header__left-box__current-group
-        group
+        = @group.name
       %ul.main-header__left-box__member-list
-        Member :
+        Menber :
         %li.main-header__left-box__member-list__member
-          fuji
-    = link_to "#", class: "main-header__edit-btn" do
+          - @group.users.each do |user|
+            %li= user.name
+    = link_to edit_group_path(@group), class: "main-header__edit-btn" do
       = "Edit"
   .main-messages
-    .message
-      .message__upper-info
-        %p.message__upper-info__talk-user
-          fuji
-        %p.message__upper-info__date
-          2020/0609/01:11
-      %p.message__text
-        こんにちは
-    .message
-      .message__upper-info
-        %p.message__upper-info__talk-user
-          fuji
-        %p.message__upper-info__date
-          2020/0609/01:20
-      %p.message__text
-        どうもどうも
+    = render @messages
+    
   .main-form
-    %form_with.new-message
+    = form_with model: [@group, @message], html: {class: "new-message"}, local: true do |f|
       .input-box
-        %input{type:"text", class:"input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image",}
-          = icon('far', 'image')
-          %input{type:"file", class: "input-box__image__file",}
-      %input{type: "submit", value: "Send", class: "submit-btn"}
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
+          = icon('far', 'image', class: 'input-box__image')
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'
