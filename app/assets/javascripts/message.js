@@ -57,12 +57,13 @@ $(function(){
       let html = buildHTML(data);
       $('.main-messages').append(html);  
       $('form')[0].reset();
-      $(".submit-btn").removeAttr("disabled");
       $('.main-messages').animate({scrollTop: $('.main-messages')[0].scrollHeight}, 'fast'); 
     })
     .fail(function(){
       alert("メッセージ送信に失敗しました");
-      $(".submit-btn").removeAttr("disabled");
+    })
+    .always(function(){
+      $('.submit-btn').removeAttr("disabled");
     });
   });
 });
