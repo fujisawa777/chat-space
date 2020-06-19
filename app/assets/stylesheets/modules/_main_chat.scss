@@ -54,9 +54,11 @@
           margin-left: 10px;
         }
       }
-      &__text {
-        color: #434A54;
-        font-size: 14px;
+    }
+    .message_text {
+      &__form {
+      color: #434A54;
+      font-size: 12px;
       }
     }
   }

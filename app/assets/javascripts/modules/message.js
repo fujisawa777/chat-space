@@ -31,7 +31,7 @@ $(function(){
           </p>
         </div>
         <p class="message__text">
-          <p class="message__text">
+          <p class="message__text__form">
             ${message.content}
           </p>
         </p>
